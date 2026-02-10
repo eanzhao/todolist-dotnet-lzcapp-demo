@@ -1,0 +1,34 @@
+# 整个文件中，可以通过 ${var} 的方式，使用 manifest 字段指定的文件定义的值
+
+# buildscript
+# - 可以为构建脚本的路径地址
+# - 如果构建命令简单，也可以直接写 sh 的命令
+buildscript: sh build.sh
+
+# manifest: 指定 lpk 包的 manifest.yml 文件路径
+manifest: ./lzc-manifest.yml
+
+# contentdir: 指定打包的内容，将会打包到 lpk 中
+contentdir: ./dist
+
+# pkgout: lpk 包的输出路径
+pkgout: ./
+
+# icon 指定 lpk 包 icon 的路径，仅允许 png 后缀
+icon: ./lzc-icon.png
+
+# devshell 指定开发依赖的情况
+# 使用 dotnet SDK 镜像作为基础镜像，这样在 devshell 中可以直接使用 dotnet CLI
+# 同时安装 nodejs/npm 用于前端开发
+devshell:
+  # 开发时的路由：将请求代理到本地 Vite 开发服务器
+  routes:
+    - /=http://127.0.0.1:5173
+  # 使用官方 .NET SDK Alpine 镜像作为开发容器基础
+  image: mcr.microsoft.com/dotnet/sdk:10.0-alpine
+  # pull_policy: missing 表示仅在本地不存在时拉取
+  pull_policy: missing
+  # 容器启动后自动执行的初始化脚本
+  setupscript: |
+    apk add --no-cache nodejs npm
+    export npm_config_registry=https://registry.npmmirror.com

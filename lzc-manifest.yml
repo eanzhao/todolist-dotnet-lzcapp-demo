@@ -1,0 +1,13 @@
+lzc-sdk-version: 0.1
+name: 待办清单DotNet
+package: cloud.lazycat.app.todolistdotnet
+version: 0.0.1
+description: 基于 ASP.NET Core + Vue3 的待办清单应用
+license: https://choosealicense.com/licenses/mit/
+homepage:
+author:
+application:
+  subdomain: todolistdotnet
+  routes:
+    - /=file:///lzcapp/pkg/content/web
+    - /api/=exec://3000,/lzcapp/pkg/content/backend/run.sh
