@@ -8,25 +8,26 @@
 
 ```
 .
-├── ui/                         # 前端代码（Vue 3 + Tailwind CSS）
+├── ui/                                  # 前端代码（Vue 3 + Tailwind CSS）
 │   ├── src/
-│   │   ├── App.vue             # 主组件：待办清单 UI
-│   │   ├── main.js             # 应用入口
-│   │   └── style.css           # 全局样式（Tailwind）
-│   ├── package.json            # 前端依赖声明
-│   └── vite.config.js          # Vite 配置（含开发代理）
-├── backend/                    # 后端代码
-│   ├── TodoApi/                # ASP.NET Core 项目
-│   │   ├── TodoApi.csproj      # .NET 项目文件
-│   │   ├── Program.cs          # 主程序：API 路由定义
-│   │   ├── Models/Todo.cs      # 数据模型
-│   │   └── Data/TodoDbContext.cs  # EF Core 数据库上下文
-│   └── run.sh                  # LPK 容器内的启动脚本
-├── build.sh                    # 项目构建脚本
-├── lzc-build.yml               # 懒猫应用构建配置
-├── lzc-manifest.yml            # 懒猫应用元信息配置
-├── lzc-icon.png                # 应用图标
-└── README.md                   # 本文件
+│   │   ├── App.vue                      # 主组件：待办清单 UI
+│   │   ├── main.js                      # 应用入口
+│   │   └── style.css                    # 全局样式（Tailwind）
+│   ├── package.json                     # 前端依赖声明
+│   └── vite.config.js                   # Vite 配置（含开发代理）
+├── backend/                             # 后端代码
+│   ├── src/
+│   │   ├── TodoApi/                     # ASP.NET Core 项目
+│   │   │    ├── TodoApi.csproj          # .NET 项目文件
+│   │   │    ├── Program.cs              # 主程序：API 路由定义
+│   │   │    ├── Models/Todo.cs          # 数据模型
+│   │   │    └── Data/TodoDbContext.cs   # EF Core 数据库上下文
+│   └── run.sh                           # LPK 容器内的启动脚本
+├── build.sh                             # 项目构建脚本
+├── lzc-build.yml                        # 懒猫应用构建配置
+├── lzc-manifest.yml                     # 懒猫应用元信息配置
+├── lzc-icon.png                         # 应用图标
+└── README.md                            # 本文件
 ```
 
 ---
